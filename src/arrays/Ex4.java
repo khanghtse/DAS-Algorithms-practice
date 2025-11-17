@@ -11,6 +11,7 @@ public class Ex4 {
 //    Với n = 3, a = [1, 2, 3], k = 2, thì kết quả mong muốn là: "1 2 ".
 //    Không thể xóa phần từ trong Array vì các phần tử trong Array là cố định
     public static void main(String[] args) {
+        // delete element in array
         Scanner sc = new Scanner(System.in);
 
         int n = sc.nextInt();
