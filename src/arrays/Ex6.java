@@ -23,7 +23,7 @@ public class Ex6 {
 
         for(int i = 0; i < tickArray.length; i++){
             if(tickArray[i] > 0){
-                System.out.print(i + "-" + tickArray[i] + ";");
+                System.out.print(i + " - " + tickArray[i] + "; ");
             }
         }
     }
