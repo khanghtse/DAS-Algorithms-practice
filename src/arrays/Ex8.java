@@ -5,35 +5,53 @@ import java.util.Scanner;
 public class Ex8 {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int []  a = new int[n];
-        int m = sc.nextInt();
-        int []  b = new int[m];
 
-        for(int i = 0; i < n; i++){
+        Scanner sc = new Scanner(System.in);
+
+        // 1. Nhập dãy a
+        // Bước 1: Nhập số lượng phần tử n
+        int n = sc.nextInt();
+        int[] a = new int[n];
+        // Bước 2: Nhập từng phần tử của dãy a
+        for (int i = 0; i < n; i++) {
             a[i] = sc.nextInt();
         }
-        for(int i = 0; i < m; i++){
-            b[i] = sc.nextInt();
+
+        // 2. Nhập dãy b
+        // Bước 1: Nhập số lượng phần tử m
+        int m = sc.nextInt();
+        int[] b = new int[m];
+        // Bước 2: Nhập từng phần tử của dãy b
+        for (int j = 0; j < m; j++) {
+            b[j] = sc.nextInt();
         }
 
-        int[] c = {};
+        sc.close(); // Đóng scanner sau khi nhập xong
 
-        if (a[0] >= b[0]) {
-            c = addElement(c, b[0]);
-        } else {
-            c = addElement(c, a[0]);
+        // 3. Xử lý gộp và in ra màn hình (Thuật toán 2 con trỏ)
+        int i = 0; // Con trỏ cho dãy a
+        int j = 0; // Con trỏ cho dãy b
+
+        while (i < n && j < m) {
+            if (a[i] <= b[j]) {
+                System.out.print(a[i] + " ");
+                i++;
+            } else {
+                System.out.print(b[j] + " ");
+                j++;
+            }
         }
 
-    }
-
-    public static int[] addElement(int[] arr, int value) {
-        int[] newArr = new int[arr.length + 1];
-        for (int i = 0; i < arr.length; i++) {
-            newArr[i] = arr[i];
+        // In các phần tử còn lại của dãy a (nếu có)
+        while (i < n) {
+            System.out.print(a[i] + " ");
+            i++;
         }
-        newArr[arr.length] = value; // thêm vào cuối
-        return newArr;
+
+        // In các phần tử còn lại của dãy b (nếu có)
+        while (j < m) {
+            System.out.print(b[j] + " ");
+            j++;
+        }
     }
 }
