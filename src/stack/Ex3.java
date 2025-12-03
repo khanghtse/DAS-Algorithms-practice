@@ -4,6 +4,9 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class Ex3 {
+//    Cho một sâu s chỉ gồm các ký tự viết thường, hãy viết hàm trả về chuỗi mã hóa của sâu này.
+//    Xem ví dụ để hiểu rõ hơn quá trình mã hóa.
+//    Với s = "aaabbaaac" thì encodeString(s) = "a3b2a3c1".
     public static void main (String[] args) {
         Stack<Character> stack = new Stack<>();
         Scanner sc = new Scanner(System.in);
