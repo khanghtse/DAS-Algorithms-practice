@@ -1,5 +1,6 @@
 package linear_search;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ex5 {
@@ -17,15 +18,22 @@ public class Ex5 {
 
         int x = sc.nextInt();
 
-        boolean check = true;
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] == x) {
-                System.out.println(i);
-                check = false;
-                break;
+        // binary search
+        int low = 0;
+        int high = a.length - 1;
+        Arrays.sort(a);
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            if (a[mid] == x) {
+                System.out.println(mid);
+            } else if (a[mid] < x) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
             }
         }
 
-        if (check) System.out.println("-1");
+        System.out.println(-1);
     }
 }
